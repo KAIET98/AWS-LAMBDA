@@ -1,7 +1,9 @@
 
 
+from email.policy import Policy
 from xml.dom import InvalidStateErr
 import boto3
+from matplotlib.collections import PolyCollection
 from numpy import isin
 iam = boto3.resource('iam')
 
@@ -19,8 +21,8 @@ def get_policy_body(arn, version_id = None):
 
     return version.document
 
-POLICY_ARN = "arn:aws:iam::070307590085:policy/service-role/AWSCodePipelineServiceRole-us-east-1-CodeC-EC2-S3"
-
+#POLICY_ARN = "arn:aws:iam::070307590085:policy/service-role/AWSCodePipelineServiceRole-us-east-1-CodeC-EC2-S3"
+POLICY_ARN = "arn:aws:logs:us-east-1:070307590085:log-group:/aws/lambda/lambda-alb-tutorial"
 
 body = get_policy_body(POLICY_ARN)
 

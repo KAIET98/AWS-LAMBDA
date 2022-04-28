@@ -152,6 +152,8 @@ Nos devolvera un log event de este tipo:
 {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
 ```
 
+4. Output ALB:
+
 Ahora tengo que esperar a que el ALB termine de 'provisionar', pues si vamos a la pestaña de ALB, veremos que esta 'Provisioning'. Bueno pasará de Provisioning, a Active. 
 
 Si copiamos el DNS, y lo pegamos en una pestaña de Google, se nos va a descargar un fichero, que si abrimos en el block de ntoas vamos a obtener la respuesta de 
@@ -159,6 +161,8 @@ Si copiamos el DNS, y lo pegamos en una pestaña de Google, se nos va a descarga
 ```
 'Hello from Lambda!'
 ```
+
+5. Cambio de tipo de output Lambda a ALB: 
 
 Lo suyo sin emabrgo, seria que tuviesemos esa respuesta por pantalla HTML cuando ejecutamos la lambda, por lo que en si en si, tras mirar la documentación oficial nos damos cuetna que el formato sería: 
 
@@ -205,7 +209,6 @@ def lambda_handler(event, context):
     
     
     return {
-        {
         "statusCode": 200,
         "statusDescription": "200 OK",
         "isBase64Encoded": False,
@@ -214,9 +217,20 @@ def lambda_handler(event, context):
         },
         "body": "<h1>Hello from Lambda!</h1>"
         }
-    }
+    
     
 ```
+
+le damos a deploy y luego a test. 
+
+Volvemos a la pestaña con el enlace de DNS de ALB que teniamos antes y lo refrescamos, nos saldrá el output del lambda.
+
+6. ¿Cuál es el evento del lambda?
+
+Vamos a mirar quét ipo de evento se nos está ejecutando en el Lambda, por lo que volvemos al menú de lambda y lo miramos, Monitor>Logs>RecentInvocations y pillamos la primera línea, que es la última Invocation. 
+
+(Si quieres saber más información sobre como obtener información sobre tus logs más en profundidad, visita la carpeta de CloudWatchPython, y mira los diferentes scripts que hay. )
+
 
 ```
 
