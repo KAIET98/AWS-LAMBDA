@@ -30,4 +30,21 @@ En cuanto al procesamiento, es muy eficiente tener una lambda tirando ahí todo 
 
     Nosotros no vamos a tocar nada de ello en ese readme, simplemente vamos a llamar a la Lamdbda por medio del CLI del cloud.
 
+3. aplication_load_balancer: 
 
+A veces quizas como usuario te parece exponer la funcion lamnda por medio de un endpoint HTTP(S), para ello tienes que tuilizar un Application Load Balancer / ALB, o un API Gateway. 
+
+Nosotros lo haremos con un ALB.
+
+El ALB convierte el HHTP request a Lambda, por medio de una transformación a JSON. 
+
+En el JOSN nos aparecera: 
+1. Información del ELB
+2. El método de HTTP Method
+3. El query string conlos parametros en formato de KEY value
+4. Los headers como key value pairs. 
+5. EL body, con indicaciones API propias (POST, PUT..) y si hay necesidad de hacer una decodificación 64. 
+
+Paralelamente nuesgtro lambda, tambien devuelve un JSON, el ALB lo convierte a un HTTP. 
+
+**Multi-header values**, si tenemos un cliente comnuicandose con nuestro ALB, si nos manda un cliente muchos strings, es decir muchos parametros, podemos convertir muchos parametros que sean de la misma familia en arrays.
