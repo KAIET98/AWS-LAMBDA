@@ -28,4 +28,6 @@ Las formas en las que se puede percibir esta operación en AWS son:
 - Amazon Cognito
 - Step Functions
 
+Nosotros no vamos a tocar nada de ello en ese readme, simplemente vamos a llamar a la Lamdbda por medio del CLI del cloud.
+
 
