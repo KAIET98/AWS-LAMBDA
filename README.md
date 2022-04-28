@@ -12,22 +12,22 @@ En cuanto al procesamiento, es muy eficiente tener una lambda tirando ahí todo 
 
 2. synchronous_invocations: es decir, hay ciertos momentos donde nosotros podemos estar esperando un resultado por mediod de una call por ejemplo, y este resultado, venga en un momento dado en un formato. 
 
-Dicho de otra manera: el cliente puede invocar una API GATEWATY y este un 'proxy' llamando a un 'Lambda'. Esta fnción puede ejecutar una operación y  mandar la respuesta primero al API GATEWAY y luego este al cliente. 
+    Dicho de otra manera: el cliente puede invocar una API GATEWATY y este un 'proxy' llamando a un 'Lambda'. Esta fnción puede ejecutar una operación y  mandar la respuesta primero al API GATEWAY y luego este al cliente. 
 
-Bien, pues el cliente somos nosotros. 
+    Bien, pues el cliente somos nosotros. 
 
-Las formas en las que se puede percibir esta operación en AWS son: 
-1. User invoked: 
+    Las formas en las que se puede percibir esta operación en AWS son: 
+    1. User invoked: 
 
-- ElasticLoadBalancer
-- Amazon API Gateway
-- CloudFront
-- S3 Batch
+    - ElasticLoadBalancer
+    - Amazon API Gateway
+    - CloudFront
+    - S3 Batch
 
-2. Service Invoked: 
-- Amazon Cognito
-- Step Functions
+    2. Service Invoked: 
+    - Amazon Cognito
+    - Step Functions
 
-Nosotros no vamos a tocar nada de ello en ese readme, simplemente vamos a llamar a la Lamdbda por medio del CLI del cloud.
+    Nosotros no vamos a tocar nada de ello en ese readme, simplemente vamos a llamar a la Lamdbda por medio del CLI del cloud.
 
 
