@@ -231,42 +231,13 @@ Vamos a mirar quét ipo de evento se nos está ejecutando en el Lambda, por lo q
 
 (Si quieres saber más información sobre como obtener información sobre tus logs más en profundidad, visita la carpeta de CloudWatchPython, y mira los diferentes scripts que hay. )
 
+Dentro de ese link, podemos sacar muchisima información, incluso la IP pública... 
 
-```
 
-```
+7. Multi header support
 
-```
+Si volvemos a nuestros target groups, en EC2, podemos modificar atributes, dentro de 'ATRIBUTES', lo que vamos a hacer es modificar el apartado de 'Multi value headers', y ponerlos en Enabled. 
 
-```
+Vamos a ponerlo a prueba. Podemos incluirle en la url del DNS como name = foo y name = bar, y esto se vera reflejado luego en los logs de Cloudwatch. 
 
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-```
-
-```
-
+:)
